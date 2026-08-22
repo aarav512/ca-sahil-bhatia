@@ -1,0 +1,20 @@
+import type { MetadataRoute } from "next";
+import { insights, site } from "@/lib/site";
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const pages = ["", "/about", "/practice-areas", "/insights", "/contact"].map((path) => ({
+    url: `${site.url}${path || "/"}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: path === "" ? 1 : 0.8,
+  }));
+
+  const articles = insights.map((article) => ({
+    url: `${site.url}/insights/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: "yearly" as const,
+    priority: 0.6,
+  }));
+
+  return [...pages, ...articles];
+}
