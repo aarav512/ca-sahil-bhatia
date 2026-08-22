@@ -34,7 +34,7 @@ export default function PracticeAreasPage() {
           <p className="text-[11px] uppercase tracking-luxury text-champagne">
             Practice areas
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl text-navy md:text-7xl">
+          <h1 className="mt-5 max-w-3xl font-serif text-5xl font-semibold tracking-tightish text-navy md:text-7xl">
             Professional services
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">

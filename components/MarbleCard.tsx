@@ -10,7 +10,7 @@ export function MarbleCard({
   return (
     <div
       className={cn(
-        "marble-panel border border-border/80 p-8 shadow-lift md:p-10",
+        "marble-panel border border-champagne/40 p-8 shadow-lift md:p-10",
         className,
       )}
     >

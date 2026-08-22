@@ -5,10 +5,11 @@
 :root {
   --ivory: #faf8f5;
   --pearl: #fffcfa;
-  --stone: #f1ece4;
-  --navy: #12324a;
-  --forest: #214032;
+  --stone: #f4efe8;
+  --navy: #17324d;
+  --forest: #284435;
   --champagne: #b08d57;
+  --gold: #c8a96b;
   --walnut: #5e4633;
   --ink: #2a2927;
   --border: #ddd4c8;
@@ -31,14 +32,24 @@ html.lenis body {
 
 body {
   @apply bg-ivory text-ink font-body antialiased;
+  font-weight: 400;
+  background-color: #faf8f5;
   background-image:
-    radial-gradient(ellipse 80% 50% at 0% 0%, rgba(176, 141, 87, 0.06), transparent 50%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(18, 50, 74, 0.04), transparent 45%);
+    radial-gradient(ellipse 90% 55% at 8% -10%, rgba(255, 255, 255, 0.7), transparent 50%),
+    radial-gradient(ellipse 70% 45% at 100% 0%, rgba(23, 50, 77, 0.035), transparent 48%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+.font-serif {
+  letter-spacing: -0.03em;
 }
 
 ::selection {
   background: rgba(176, 141, 87, 0.28);
-  color: #12324a;
+  color: #17324d;
 }
 
 a:focus-visible,
@@ -50,21 +61,38 @@ select:focus-visible {
 }
 
 .marble-panel {
+  position: relative;
   background-color: #f7f3ec;
   background-image:
-    radial-gradient(ellipse at 20% 30%, rgba(255, 255, 255, 0.85), transparent 42%),
-    radial-gradient(ellipse at 80% 20%, rgba(176, 141, 87, 0.12), transparent 40%),
-    radial-gradient(ellipse at 60% 80%, rgba(94, 70, 51, 0.05), transparent 45%),
-    linear-gradient(115deg, rgba(255, 255, 255, 0.4) 0%, transparent 35%, rgba(221, 212, 200, 0.35) 70%, transparent 100%);
+    radial-gradient(ellipse at 18% 28%, rgba(255, 255, 255, 0.88), transparent 42%),
+    radial-gradient(ellipse at 82% 18%, rgba(176, 141, 87, 0.1), transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(40, 68, 53, 0.04), transparent 45%),
+    linear-gradient(118deg, rgba(255, 255, 255, 0.45) 0%, transparent 36%, rgba(221, 212, 200, 0.28) 72%, transparent 100%);
+}
+
+.marble-panel::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='a'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
 }
 
 .gold-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #b08d57, transparent);
+  background: linear-gradient(90deg, transparent, #b08d57, #c8a96b, #b08d57, transparent);
 }
 
 .editorial-measure {
   max-width: 38rem;
+}
+
+.paper-linen {
+  background-image:
+    linear-gradient(90deg, rgba(176, 141, 87, 0.025) 1px, transparent 1px),
+    linear-gradient(rgba(176, 141, 87, 0.02) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
 .sr-only {

@@ -40,7 +40,7 @@ export function ExpertiseSticky() {
   const featured = practiceAreas.slice(0, 4);
 
   return (
-    <section className="border-y border-border bg-ivory py-24">
+    <section className="border-y border-border bg-ivory py-32">
       <div ref={pin} className="container grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="text-[11px] uppercase tracking-luxury text-champagne">

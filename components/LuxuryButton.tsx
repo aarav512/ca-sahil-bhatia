@@ -22,16 +22,16 @@ export function LuxuryButton({
   type = "button",
   onClick,
 }: Props) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 180, damping: 18, mass: 0.3 });
-  const springY = useSpring(y, { stiffness: 180, damping: 18, mass: 0.3 });
+  const springX = useSpring(x, { stiffness: 200, damping: 16, mass: 0.25 });
+  const springY = useSpring(y, { stiffness: 200, damping: 16, mass: 0.25 });
 
   const styles = {
-    navy: "bg-navy text-pearl hover:bg-[#0e2a3e]",
-    gold: "bg-champagne text-navy hover:bg-[#9c7a48]",
-    outline: "border border-navy/25 bg-pearl/40 text-navy hover:border-champagne",
+    navy: "border border-[#17324D] bg-navy text-pearl",
+    gold: "border border-champagne bg-champagne text-navy",
+    outline: "border border-champagne/70 bg-transparent text-navy",
   }[variant];
 
   function onMove(e: React.MouseEvent) {
@@ -39,8 +39,8 @@ export function LuxuryButton({
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const r = el.getBoundingClientRect();
-    x.set((e.clientX - r.left - r.width / 2) * 0.18);
-    y.set((e.clientY - r.top - r.height / 2) * 0.18);
+    x.set((e.clientX - r.left - r.width / 2) * 0.22);
+    y.set((e.clientY - r.top - r.height / 2) * 0.22);
   }
 
   function onLeave() {
@@ -53,14 +53,19 @@ export function LuxuryButton({
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
+      whileTap={{ scale: 0.98 }}
       style={{ x: springX, y: springY }}
       className={cn(
-        "inline-flex h-14 items-center justify-center px-8 text-[12px] font-medium uppercase tracking-[0.2em] transition-colors duration-300",
+        "group/btn relative inline-flex h-14 items-center justify-center overflow-hidden px-9 font-body text-[12px] font-semibold uppercase tracking-[0.22em] shadow-brass transition-shadow duration-500 hover:shadow-glow",
         styles,
         className,
       )}
     >
-      {children}
+      <span
+        className="pointer-events-none absolute inset-y-0 -left-1/2 w-1/3 skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/35 to-transparent opacity-0 transition-opacity duration-300 group-hover/btn:animate-shine group-hover/btn:opacity-100"
+        aria-hidden
+      />
+      <span className="relative z-10">{children}</span>
     </motion.span>
   );
 

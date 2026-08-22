@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter, Manrope, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Providers } from "@/components/Providers";
@@ -10,26 +10,14 @@ import "../styles/tokens.css";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
   variable: "--font-cormorant",
-  display: "swap",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
   display: "swap",
 });
 
 const manrope = Manrope({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-manrope",
   display: "swap",
 });
@@ -81,7 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const jsonLd = [organizationSchema(), professionalServiceSchema(), faqSchema()];
 
   return (
-    <html lang="en-IN" className={`${cormorant.variable} ${playfair.variable} ${inter.variable} ${manrope.variable}`}>
+    <html lang="en-IN" className={`${cormorant.variable} ${manrope.variable}`}>
       <body className="min-h-screen font-body">
         <script
           type="application/ld+json"

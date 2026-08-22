@@ -20,7 +20,7 @@ export default function HomePage() {
         }}
       />
       <Hero />
-      <section className="container py-8 md:py-16">
+      <section className="container py-16 md:py-24">
         <SectionHeading
           eyebrow="Studio"
           title="Quiet objects of the profession"

@@ -11,55 +11,52 @@ const config: Config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1.25rem",
-        sm: "1.5rem",
-        lg: "2rem",
-        xl: "2.5rem",
+        DEFAULT: "1.5rem",
+        sm: "2rem",
+        lg: "2.5rem",
+        xl: "3rem",
       },
       screens: {
-        "2xl": "1400px",
+        "2xl": "1440px",
       },
     },
     extend: {
       colors: {
         ivory: "#FAF8F5",
         pearl: "#FFFCFA",
-        stone: "#F1ECE4",
-        navy: "#12324A",
-        forest: "#214032",
+        stone: "#F4EFE8",
+        navy: "#17324D",
+        forest: "#284435",
         champagne: "#B08D57",
+        gold: "#C8A96B",
         walnut: "#5E4633",
         ink: "#2A2927",
         border: "#DDD4C8",
         muted: "#6F6A63",
       },
       fontFamily: {
-        serif: [
-          "var(--font-cormorant)",
-          "var(--font-playfair)",
-          "Playfair Display",
-          "Georgia",
-          "serif",
-        ],
-        sans: ["var(--font-inter)", "Manrope", "system-ui", "sans-serif"],
-        body: ["var(--font-manrope)", "Inter", "system-ui", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        body: ["var(--font-manrope)", "system-ui", "sans-serif"],
       },
       letterSpacing: {
         luxury: "0.28em",
-        wideish: "0.12em",
+        wideish: "0.14em",
+        tightish: "-0.03em",
       },
       boxShadow: {
-        lift: "0 18px 40px -24px rgba(18, 50, 74, 0.28)",
-        brass: "0 10px 30px -18px rgba(176, 141, 87, 0.55)",
-      },
-      backgroundImage: {
-        marble:
-          "radial-gradient(1200px 600px at 10% -10%, rgba(255,255,255,0.9), transparent 55%), radial-gradient(900px 500px at 90% 10%, rgba(176,141,87,0.08), transparent 50%), linear-gradient(180deg, #FFFCFA 0%, #FAF8F5 45%, #F1ECE4 100%)",
+        lift: "0 22px 50px -28px rgba(23, 50, 77, 0.32)",
+        brass: "0 12px 32px -16px rgba(176, 141, 87, 0.55)",
+        glow: "0 0 40px -12px rgba(200, 169, 107, 0.45)",
       },
       keyframes: {
         "gold-grow": {
           "0%": { transform: "scaleX(0)" },
           "100%": { transform: "scaleX(1)" },
+        },
+        shine: {
+          "0%": { transform: "translateX(-120%)" },
+          "100%": { transform: "translateX(120%)" },
         },
         shimmer: {
           "0%": { backgroundPosition: "0% 50%" },
@@ -81,6 +78,7 @@ const config: Config = {
       },
       animation: {
         "gold-grow": "gold-grow 0.6s ease forwards",
+        shine: "shine 1.4s ease",
         shimmer: "shimmer 8s linear infinite",
         sunlight: "sunlight 18s ease-in-out infinite",
         "accordion-down": "accordion-down 0.2s ease-out",

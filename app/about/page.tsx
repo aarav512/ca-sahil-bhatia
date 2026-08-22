@@ -31,12 +31,12 @@ export default function AboutPage() {
         <div className="container grid items-end gap-12 py-24 lg:grid-cols-2">
           <div>
             <p className="text-[11px] uppercase tracking-luxury text-champagne">About</p>
-            <h1 className="mt-4 font-serif text-5xl text-navy md:text-7xl">{site.name}</h1>
+            <h1 className="mt-5 font-serif text-5xl font-semibold tracking-tightish text-navy md:text-7xl">{site.name}</h1>
             <p className="mt-6 max-w-lg text-lg text-muted">
               {site.qualification}. {site.institute}.
             </p>
           </div>
-          <div className="aspect-[4/5] max-w-md border border-champagne/50 p-8">
+          <div className="aspect-[4/5] max-w-md border border-gold/60 p-10">
             <div className="flex h-full flex-col justify-between">
               <p className="text-[11px] uppercase tracking-luxury text-champagne">
                 Professional identity

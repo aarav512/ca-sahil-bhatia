@@ -28,7 +28,7 @@ export default function InsightsPage() {
       <section className="marble-panel border-b border-border">
         <div className="container py-24">
           <p className="text-[11px] uppercase tracking-luxury text-champagne">Insights</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl text-navy md:text-7xl">
+          <h1 className="mt-5 max-w-3xl font-serif text-5xl font-semibold tracking-tightish text-navy md:text-7xl">
             Notes for general information
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">
@@ -49,23 +49,18 @@ export default function InsightsPage() {
             title="Statutory due dates"
             description="Dates change by notification. Treat the following as a reminder to check the official calendar — not as a filing timetable for any year."
           />
-          <div className="mt-10 overflow-x-auto border border-border bg-pearl/70">
-            <table className="w-full text-left text-sm">
-              <thead className="border-b border-border text-[11px] uppercase tracking-luxury text-walnut">
-                <tr>
-                  <th className="px-6 py-4">When</th>
-                  <th className="px-6 py-4">Item</th>
-                </tr>
-              </thead>
-              <tbody>
-                {taxCalendar.map((row) => (
-                  <tr key={row.what} className="border-b border-border/70">
-                    <td className="px-6 py-4 text-navy">{row.when}</td>
-                    <td className="px-6 py-4 text-muted">{row.what}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {taxCalendar.map((row) => (
+              <article
+                key={row.what}
+                className="border border-champagne/30 bg-pearl/70 p-8 transition-shadow hover:shadow-lift"
+              >
+                <p className="font-body text-[11px] font-medium uppercase tracking-luxury text-champagne">
+                  {row.when}
+                </p>
+                <p className="mt-4 font-serif text-xl font-semibold text-navy">{row.what}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -76,12 +71,17 @@ export default function InsightsPage() {
           title="Request a general guide"
           description="Checklists are sent on request. They are not marketed as paid products or as official forms."
         />
-        <ul className="mt-10 divide-y divide-border border border-border">
+        <ul className="mt-12 grid gap-6 md:grid-cols-3">
           {guides.map((g) => (
-            <li key={g.title} className="flex items-center justify-between px-6 py-5">
-              <span className="font-serif text-xl text-navy">{g.title}</span>
-              <Link href={g.href} className="text-[11px] uppercase tracking-luxury text-champagne">
-                {g.type}
+            <li key={g.title}>
+              <Link
+                href={g.href}
+                className="block h-full border border-champagne/35 bg-pearl/70 p-8 transition-all hover:-translate-y-1 hover:border-gold hover:shadow-lift"
+              >
+                <span className="font-serif text-xl font-semibold text-navy">{g.title}</span>
+                <span className="mt-6 block font-body text-[11px] font-semibold uppercase tracking-luxury text-champagne">
+                  {g.type}
+                </span>
               </Link>
             </li>
           ))}

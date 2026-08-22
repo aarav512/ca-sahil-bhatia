@@ -57,7 +57,7 @@ export function InsightsBrowser() {
       {featured && cat === "All" && !q ? (
         <Link
           href={`/insights/${featured.slug}`}
-          className="mt-12 grid gap-8 border border-border bg-pearl/60 p-8 transition-transform hover:-translate-y-1 md:grid-cols-2 md:p-12"
+          className="mt-12 grid gap-8 border border-champagne/40 bg-pearl/70 p-10 shadow-lift transition-transform duration-500 hover:-translate-y-1 md:grid-cols-2 md:p-14"
         >
           <div>
             <p className="text-[11px] uppercase tracking-luxury text-champagne">
@@ -78,7 +78,7 @@ export function InsightsBrowser() {
           <Link
             key={item.slug}
             href={`/insights/${item.slug}`}
-            className="group border border-border bg-ivory p-7 transition-all duration-500 hover:border-champagne/50 hover:shadow-lift"
+            className="group border border-champagne/30 bg-ivory p-8 transition-all duration-500 hover:border-gold hover:shadow-lift"
           >
             <p className="text-[11px] uppercase tracking-luxury text-champagne">
               {item.category}

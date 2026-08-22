@@ -5,10 +5,10 @@ import { site } from "@/lib/site";
 
 export function AboutPreview() {
   return (
-    <section className="container grid items-center gap-16 py-28 lg:grid-cols-2">
+    <section className="container grid items-center gap-20 py-32 lg:grid-cols-2">
       <MaskReveal>
-        <div className="relative aspect-[4/5] marble-panel border border-border p-6">
-          <div className="flex h-full flex-col justify-between border border-champagne/40 p-8">
+        <div className="relative aspect-[4/5] marble-panel border border-champagne/40 p-8">
+          <div className="flex h-full flex-col justify-between border border-gold/50 p-10">
             <p className="text-[11px] uppercase tracking-luxury text-champagne">
               Chartered Accountant
             </p>

@@ -31,7 +31,7 @@ export default function ContactPage() {
       <section className="marble-panel border-b border-border">
         <div className="container py-24">
           <p className="text-[11px] uppercase tracking-luxury text-champagne">Contact</p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl text-navy md:text-7xl">
+          <h1 className="mt-5 max-w-3xl font-serif text-5xl font-semibold tracking-tightish text-navy md:text-7xl">
             Schedule a meeting
           </h1>
           <p className="mt-6 max-w-xl text-lg text-muted">

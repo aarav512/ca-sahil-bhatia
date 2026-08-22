@@ -27,7 +27,7 @@ const items = [
 
 export function TrustPrinciples() {
   return (
-    <section className="container py-28">
+    <section className="container py-32">
       <SectionHeading
         eyebrow="Professional standing"
         title="What this website will and will not say"
@@ -35,7 +35,10 @@ export function TrustPrinciples() {
       />
       <div className="mt-16 grid gap-8 md:grid-cols-2">
         {items.map((item) => (
-          <article key={item.title} className="border border-border bg-pearl/50 p-8">
+          <article
+            key={item.title}
+            className="border border-champagne/30 bg-pearl/70 p-10 transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:shadow-lift"
+          >
             <item.icon className="h-5 w-5 text-champagne" aria-hidden />
             <h3 className="mt-5 font-serif text-2xl text-navy">{item.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>

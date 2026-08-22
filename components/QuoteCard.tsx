@@ -6,12 +6,12 @@ export function QuoteCard({
   attribution?: string;
 }) {
   return (
-    <blockquote className="border-l border-champagne/70 bg-pearl/50 py-10 pl-8 pr-6 md:pl-12">
-      <p className="font-serif text-2xl leading-snug text-navy md:text-3xl">
+    <blockquote className="group border-l-[1.5px] border-gold bg-pearl/60 px-8 py-12 transition-shadow duration-500 hover:shadow-lift md:px-12">
+      <p className="font-serif text-2xl font-semibold leading-snug tracking-tightish text-navy md:text-[1.85rem]">
         {quote}
       </p>
       {attribution ? (
-        <footer className="mt-8 text-[11px] uppercase tracking-luxury text-walnut">
+        <footer className="mt-10 font-body text-[11px] font-medium uppercase tracking-luxury text-walnut">
           {attribution}
         </footer>
       ) : null}

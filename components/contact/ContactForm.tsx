@@ -37,7 +37,7 @@ function Field({
         rows={as === "textarea" ? 5 : undefined}
         onBlur={(e) => setFilled(Boolean((e.target as HTMLInputElement).value))}
         className={cn(
-          "peer w-full border-0 border-b border-border bg-transparent px-0 pb-3 pt-2 text-base text-ink outline-none transition-colors focus:border-champagne",
+          "peer w-full border-0 border-b border-border bg-transparent px-0 pb-3 pt-2 text-base text-ink outline-none transition-colors duration-300 focus:border-gold",
           as === "textarea" && "min-h-32 resize-y",
         )}
       />

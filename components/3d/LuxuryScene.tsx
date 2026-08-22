@@ -1,34 +1,53 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { ContactShadows, Environment, Float, Sparkles } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import type { Group, Mesh } from "three";
 
 const marble = {
   color: "#efe6d6",
-  roughness: 0.18,
-  metalness: 0.04,
-  clearcoat: 0.35,
-  clearcoatRoughness: 0.28,
+  roughness: 0.16,
+  metalness: 0.05,
+  clearcoat: 0.42,
+  clearcoatRoughness: 0.24,
 } as const;
 
 const brass = {
   color: "#b08d57",
-  roughness: 0.22,
-  metalness: 0.88,
+  roughness: 0.2,
+  metalness: 0.9,
 } as const;
 
-function MarblePillar() {
-  const ref = useRef<Mesh>(null);
+function CameraRig() {
+  const { camera } = useThree();
+  useFrame((state) => {
+    const t = state.clock.elapsedTime;
+    camera.position.x += (Math.sin(t * 0.12) * 0.18 - camera.position.x) * 0.02;
+    camera.position.y += (0.35 + Math.sin(t * 0.08) * 0.06 - camera.position.y) * 0.02;
+    camera.lookAt(0, 0.15, 0);
+  });
+  return null;
+}
+
+function MarblePillars() {
+  const a = useRef<Mesh>(null);
+  const b = useRef<Mesh>(null);
   useFrame((_, d) => {
-    if (ref.current) ref.current.rotation.y += d * 0.08;
+    if (a.current) a.current.rotation.y += d * 0.07;
+    if (b.current) b.current.rotation.y -= d * 0.05;
   });
   return (
-    <mesh ref={ref} position={[0, -0.1, 0]} castShadow>
-      <cylinderGeometry args={[0.52, 0.6, 2.35, 64]} />
-      <meshPhysicalMaterial {...marble} />
-    </mesh>
+    <>
+      <mesh ref={a} position={[0, -0.08, 0]} castShadow>
+        <cylinderGeometry args={[0.5, 0.58, 2.3, 64]} />
+        <meshPhysicalMaterial {...marble} />
+      </mesh>
+      <mesh ref={b} position={[-1.85, -0.35, -0.55]} scale={0.55} castShadow>
+        <cylinderGeometry args={[0.5, 0.56, 2.1, 48]} />
+        <meshPhysicalMaterial {...marble} />
+      </mesh>
+    </>
   );
 }
 
@@ -36,14 +55,14 @@ function Scales() {
   const ref = useRef<Group>(null);
   useFrame((state) => {
     if (!ref.current) return;
-    ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.22) * 0.12;
-    ref.current.position.y = 1.32 + Math.sin(state.clock.elapsedTime * 0.55) * 0.035;
+    ref.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.2) * 0.14;
+    ref.current.position.y = 1.3 + Math.sin(state.clock.elapsedTime * 0.5) * 0.04;
   });
   return (
-    <group ref={ref} position={[0, 1.32, 0]}>
+    <group ref={ref} position={[0, 1.3, 0]}>
       <mesh>
         <cylinderGeometry args={[0.028, 0.028, 0.68, 16]} />
-        <meshStandardMaterial {...brass} />
+        <meshStandardMaterial {...brass} emissive="#b08d57" emissiveIntensity={0.12} />
       </mesh>
       <mesh position={[0, 0.3, 0]} rotation={[0, 0, Math.PI / 2]}>
         <cylinderGeometry args={[0.018, 0.018, 1.05, 16]} />
@@ -63,49 +82,55 @@ function Scales() {
 
 function Books() {
   return (
-    <Float speed={0.7} rotationIntensity={0.12} floatIntensity={0.2}>
-      <group position={[-1.5, -0.38, 0.32]} rotation={[0.08, 0.38, 0.04]}>
+    <Float speed={0.65} rotationIntensity={0.1} floatIntensity={0.18}>
+      <group position={[-1.45, -0.32, 0.38]} rotation={[0.08, 0.38, 0.04]}>
         <mesh>
           <boxGeometry args={[0.55, 0.12, 0.38]} />
           <meshStandardMaterial color="#5e4633" roughness={0.55} />
         </mesh>
         <mesh position={[0, 0.13, 0]}>
           <boxGeometry args={[0.52, 0.1, 0.36]} />
-          <meshStandardMaterial color="#214032" roughness={0.5} />
+          <meshStandardMaterial color="#284435" roughness={0.5} />
         </mesh>
         <mesh position={[0, 0.24, 0]}>
           <boxGeometry args={[0.5, 0.08, 0.34]} />
-          <meshStandardMaterial color="#12324a" roughness={0.5} />
+          <meshStandardMaterial color="#17324d" roughness={0.5} />
         </mesh>
       </group>
     </Float>
   );
 }
 
-function PenSealPapers() {
+function PenSealPapersRing() {
   return (
     <>
-      <Float speed={0.9} rotationIntensity={0.15} floatIntensity={0.25}>
-        <mesh position={[1.42, 0.18, 0.18]} rotation={[0.4, 0.2, -0.8]}>
+      <Float speed={0.85} rotationIntensity={0.14} floatIntensity={0.22}>
+        <mesh position={[1.42, 0.2, 0.18]} rotation={[0.4, 0.2, -0.8]}>
           <cylinderGeometry args={[0.022, 0.018, 0.68, 14]} />
           <meshStandardMaterial color="#2a2927" metalness={0.4} roughness={0.3} />
         </mesh>
-        <mesh position={[1.58, -0.08, 0.3]} rotation={[0.4, 0.2, -0.8]}>
+        <mesh position={[1.58, -0.06, 0.3]} rotation={[0.4, 0.2, -0.8]}>
           <coneGeometry args={[0.028, 0.11, 12]} />
           <meshStandardMaterial {...brass} />
         </mesh>
       </Float>
-      <Float speed={0.55} floatIntensity={0.18}>
-        <mesh position={[1.12, -0.52, 0.52]} rotation={[Math.PI / 2, 0, 0.2]}>
+      <Float speed={0.5} floatIntensity={0.16}>
+        <mesh position={[1.12, -0.5, 0.52]} rotation={[Math.PI / 2, 0, 0.2]}>
           <cylinderGeometry args={[0.15, 0.15, 0.045, 40]} />
           <meshStandardMaterial color="#6e2b2b" roughness={0.42} />
         </mesh>
       </Float>
-      <mesh position={[0.82, -0.7, 0.12]} rotation={[-0.48, 0.28, 0.08]}>
+      <Float speed={0.4} rotationIntensity={0.2} floatIntensity={0.12}>
+        <mesh position={[1.7, 0.55, -0.2]} rotation={[Math.PI / 2, 0, 0]}>
+          <torusGeometry args={[0.16, 0.018, 16, 48]} />
+          <meshStandardMaterial {...brass} emissive="#c8a96b" emissiveIntensity={0.18} />
+        </mesh>
+      </Float>
+      <mesh position={[0.82, -0.68, 0.12]} rotation={[-0.48, 0.28, 0.08]}>
         <boxGeometry args={[0.46, 0.01, 0.32]} />
         <meshStandardMaterial color="#f7f1e6" roughness={0.72} />
       </mesh>
-      <mesh position={[0.9, -0.68, 0.08]} rotation={[-0.4, 0.18, 0.12]}>
+      <mesh position={[0.9, -0.66, 0.08]} rotation={[-0.4, 0.18, 0.12]}>
         <boxGeometry args={[0.42, 0.01, 0.3]} />
         <meshStandardMaterial color="#fffaf3" roughness={0.7} />
       </mesh>
@@ -116,16 +141,25 @@ function PenSealPapers() {
 function Scene() {
   return (
     <>
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[4, 6, 3]} intensity={1.05} color="#fff6ea" castShadow />
-      <pointLight position={[-3, 2, 2]} intensity={0.3} color="#b08d57" />
-      <Sparkles count={28} scale={5.5} size={1.1} speed={0.22} opacity={0.35} color="#b08d57" />
-      <MarblePillar />
+      <CameraRig />
+      <ambientLight intensity={0.48} />
+      <hemisphereLight args={["#fff6ea", "#cbbda6", 0.35]} />
+      <spotLight
+        position={[3.5, 7, 2]}
+        angle={0.45}
+        penumbra={0.8}
+        intensity={1.35}
+        color="#fff4dc"
+        castShadow
+      />
+      <pointLight position={[-3, 2, 2]} intensity={0.32} color="#c8a96b" />
+      <Sparkles count={36} scale={6} size={1.05} speed={0.18} opacity={0.32} color="#c8a96b" />
+      <MarblePillars />
       <Scales />
       <Books />
-      <PenSealPapers />
-      <ContactShadows position={[0, -1.32, 0]} opacity={0.32} blur={2.6} scale={8} />
-      <Environment preset="apartment" environmentIntensity={0.5} />
+      <PenSealPapersRing />
+      <ContactShadows position={[0, -1.32, 0]} opacity={0.3} blur={2.8} scale={8} />
+      <Environment preset="apartment" environmentIntensity={0.48} />
     </>
   );
 }
@@ -148,12 +182,12 @@ export function LuxuryScene({ compact = false }: { compact?: boolean }) {
   return (
     <div
       ref={wrap}
-      className={compact ? "relative h-full min-h-[380px] w-full" : "relative h-[420px] w-full md:h-[560px]"}
+      className={compact ? "relative h-full min-h-[380px] w-full" : "relative h-[440px] w-full md:h-[580px]"}
       aria-hidden
     >
       <Canvas
-        camera={{ position: [0, 0.35, compact ? 4.8 : 5.2], fov: 32 }}
-        dpr={[1, 1.5]}
+        camera={{ position: [0, 0.35, compact ? 4.7 : 5.1], fov: 32 }}
+        dpr={[1, 1.4]}
         gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
         shadows
         frameloop={visible ? "always" : "demand"}
