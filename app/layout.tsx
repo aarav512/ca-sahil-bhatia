@@ -73,6 +73,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  manifest: "/manifest.webmanifest",
   alternates: { canonical: "/" },
 };
 

@@ -1,0 +1,12 @@
+{
+  "name": "CA Sahil Bhatia",
+  "short_name": "CA Bhatia",
+  "description": "Practice of CA Sahil Bhatia, Chartered Accountant, offering professional services in income tax, GST, company law compliance, audit, accounting, and related advisory.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF8F5",
+  "theme_color": "#12324A",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
