@@ -1,6 +1,10 @@
 {
-  "generatedAt": "2026-08-26T16:08:36.717Z",
-  "errors": [],
+  "generatedAt": "2026-08-26T19:42:02.076Z",
+  "errors": [
+    "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/notifications.html 403",
+    "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/circulars.html 403",
+    "https://www.mca.gov.in/content/mca/global/en/home.html 403"
+  ],
   "items": [
     {
       "id": "CBIC-0",
@@ -147,114 +151,6 @@
       "url": "https://cbic-gst.gov.in/pdf/circular-239-33-2024-GST.pdf"
     },
     {
-      "id": "MCA-0-4oCYIEZBUXMg",
-      "title": "‘ FAQs on Foreign Companies / Indian Subsidiaries of Foreign Body Corporates ’",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "‘ FAQs on Foreign Companies / Indian Subsidiaries of Foreign Body Corporates ’",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/mca-services/company-e-filing/incorporation-change-services/FAQs_Foreign_Companies_Indian_Subsidiary_20260824.pptx"
-    },
-    {
-      "id": "MCA-1-4oCYQ29ycG9y",
-      "title": "‘Corporate Mitra’ Guidelines",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "‘Corporate Mitra’ Guidelines",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/corporate-mitra-guidelines-20260626.pdf"
-    },
-    {
-      "id": "MCA-2-RmlsaW5nIFN0",
-      "title": "Filing Steps and FAQs of Form 11 LLP",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Filing Steps and FAQs of Form 11 LLP",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Filing-Steps-and-FAQs-of-Form-11-LLP-20230607.pdf"
-    },
-    {
-      "id": "MCA-3-UmV2aXNlZCBG",
-      "title": "Revised Filing Steps and FAQs of Form 3 LLP",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Revised Filing Steps and FAQs of Form 3 LLP",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Revised-Filing-Steps-and-FAQs-of-Form-3-LLP-20230607.pdf"
-    },
-    {
-      "id": "MCA-4-RkFRcyBWMyBT",
-      "title": "FAQs V3 Set 2 forms[46 forms]",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "FAQs V3 Set 2 forms[46 forms]",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/46-forms-FAQs_07-Feb-2022.pdf"
-    },
-    {
-      "id": "MCA-5-RkFRIFYzIFNw",
-      "title": "FAQ V3 Spice+ and Linked Filing",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "FAQ V3 Spice+ and Linked Filing",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf"
-    },
-    {
-      "id": "MCA-6-UHJvZmVzc2lv",
-      "title": "Professional Staff Member FAQ",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Professional Staff Member FAQ",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Professional_Staff_Member_FAQ_18052022.pdf"
-    },
-    {
-      "id": "MCA-7-RXh0ZW5zaW9u",
-      "title": "Extension of time period for validity of name reservation and resubmission",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Extension of time period for validity of name reservation and resubmission",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Reserved-name-and-Resubmission-extension.pdf"
-    },
-    {
-      "id": "MCA-8-T2JzZXJ2YW5j",
-      "title": "Observance of Vigilance Awareness Week, 2025 (27 th October, 2025 to 2nd November, 2025) Providing hyperlink of e-pledge on Ministry's website",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Observance of Vigilance Awareness Week, 2025 (27 th October, 2025 to 2nd November, 2025) Providing hyperlink of e-pledge on Ministry's website",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Vigilance-awareness-week-20250918.pdf"
-    },
-    {
-      "id": "MCA-9-TUNBIDIxIFYz",
-      "title": "MCA 21 V3 Presentation on Company module Lot-3 forms",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "MCA 21 V3 Presentation on Company module Lot-3 forms",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/Lot-3-Form-enhancements.pdf"
-    },
-    {
-      "id": "MCA-10-TGF1bmNoIG9m",
-      "title": "Launch of Final Set of 38 Company Forms (Including 13 Annual Filing Forms and 6 Audit/Cost Audit Forms)",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "Launch of Final Set of 38 Company Forms (Including 13 Annual Filing Forms and 6 Audit/Cost Audit Forms)",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/List-of-38-forms.pdf"
-    },
-    {
-      "id": "MCA-11-R2VuZXJhbCBD",
-      "title": "General Circular No.02/2024 - Deployment and usage of Change Request Form (CRF) on MCA-21",
-      "source": "MCA",
-      "category": "MCA",
-      "publishedAt": "",
-      "summary": "General Circular No.02/2024 - Deployment and usage of Change Request Form (CRF) on MCA-21",
-      "url": "https://www.mca.gov.in/content/dam/mca/pdf/document-82-new-20240219.pdf"
-    },
-    {
       "id": "it-portal",
       "title": "Income Tax Department — notifications, ITR utilities, and press releases",
       "source": "Income Tax",
@@ -271,6 +167,24 @@
       "publishedAt": "",
       "summary": "Press releases relating to returns, utilities, and compliance dates.",
       "url": "https://incometaxindia.gov.in/Pages/press-releases.aspx"
+    },
+    {
+      "id": "mca-notifications",
+      "title": "MCA — notifications",
+      "source": "MCA",
+      "category": "MCA",
+      "publishedAt": "",
+      "summary": "Company-law notifications as published by the Ministry of Corporate Affairs.",
+      "url": "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/notifications.html"
+    },
+    {
+      "id": "mca-circulars",
+      "title": "MCA — circulars",
+      "source": "MCA",
+      "category": "Compliance",
+      "publishedAt": "",
+      "summary": "Circulars and compliance communications from the Ministry of Corporate Affairs.",
+      "url": "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/circulars.html"
     }
   ]
 }
