@@ -5,6 +5,7 @@ import { PracticePreview } from "@/components/home/PracticePreview";
 import { TrustPrinciples } from "@/components/home/TrustPrinciples";
 import { WhyChoose } from "@/components/home/WhyChoose";
 import { PrinciplesQuotes } from "@/components/home/PrinciplesQuotes";
+import { ConsultationCta } from "@/components/home/ConsultationCta";
 import { UpdatesPreview } from "@/components/home/UpdatesPreview";
 import { LuxurySceneLazy } from "@/components/3d/LuxurySceneLazy";
 import { SectionHeading } from "@/components/SectionHeading";

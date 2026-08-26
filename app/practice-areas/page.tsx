@@ -3,6 +3,7 @@ import { LuxuryButton } from "@/components/LuxuryButton";
 import { GoldDivider } from "@/components/GoldDivider";
 import { FaqList } from "@/components/FaqList";
 import { PracticeEnquiryForm } from "@/components/practice/PracticeEnquiryForm";
+import { PracticeJumpNav } from "@/components/PracticeJumpNav";
 import { practiceAreas, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
