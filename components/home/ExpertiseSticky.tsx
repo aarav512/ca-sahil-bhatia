@@ -66,6 +66,12 @@ export function ExpertiseSticky() {
                 <Icon className="h-6 w-6 text-champagne" aria-hidden />
                 <h3 className="mt-5 font-serif text-2xl text-navy">{area.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted">{area.scope}</p>
+                <a
+                  href={`/consultation?service=${area.slug}`}
+                  className="mt-6 inline-block text-[11px] uppercase tracking-luxury text-champagne"
+                >
+                  Get Consultation
+                </a>
               </article>
             );
           })}

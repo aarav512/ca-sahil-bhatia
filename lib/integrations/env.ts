@@ -14,8 +14,9 @@
  * hold a service-account secret.
  *
  * Tax updates:
- * Set NEXT_PUBLIC_UPDATES_JSON_URL to a JSON feed, or NEXT_PUBLIC_UPDATES_PROXY to a CORS proxy
- * that can fetch the official source URLs in lib/integrations/updates.ts.
+ * public/data/updates.json is generated at build time and every 6 hours via GitHub Actions
+ * from CBIC, Income Tax, and MCA public pages. Optional NEXT_PUBLIC_UPDATES_JSON_URL can
+ * override or supplement that file.
  */
 export const integrations = {
   driveFolderId: process.env.NEXT_PUBLIC_GOOGLE_DRIVE_FOLDER_ID ?? "",

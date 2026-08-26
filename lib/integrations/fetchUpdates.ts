@@ -13,11 +13,17 @@ function parseFeed(data: unknown): TaxUpdate[] {
         source: (r.source as TaxUpdate["source"]) || "CBIC",
         category: (r.category as TaxUpdate["category"]) || "Compliance",
         publishedAt: r.publishedAt || r.date || "",
-        summary: r.summary || "",
+        summary: r.summary || r.title,
         url: r.url,
       } satisfies TaxUpdate;
     })
     .filter((x): x is TaxUpdate => Boolean(x));
+}
+
+async function loadJson(url: string) {
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Feed ${res.status}`);
+  return res.json();
 }
 
 export async function fetchTaxUpdates(): Promise<{
@@ -25,30 +31,50 @@ export async function fetchTaxUpdates(): Promise<{
   live: boolean;
   error?: string;
 }> {
-  const target = integrations.updatesJsonUrl;
-  if (!target) {
-    return { items: [...officialSources], live: false };
+  const urls = [integrations.updatesJsonUrl, "/data/updates.json"].filter(
+    (url, i, arr) => Boolean(url) && arr.indexOf(url) === i,
+  ) as string[];
+
+  const collected: TaxUpdate[] = [];
+  const errors: string[] = [];
+
+  for (const target of urls) {
+    try {
+      const url = integrations.updatesProxy && target.startsWith("http")
+        ? `${integrations.updatesProxy}${encodeURIComponent(target)}`
+        : target;
+      const json = await loadJson(url);
+      const items = parseFeed(json.items ?? json);
+      collected.push(...items);
+    } catch (err) {
+      errors.push(err instanceof Error ? err.message : "Feed unavailable");
+    }
   }
 
-  const url = integrations.updatesProxy
-    ? `${integrations.updatesProxy}${encodeURIComponent(target)}`
-    : target;
+  const seen = new Set<string>();
+  const items = collected.filter((item) => {
+    const key = item.url + item.title;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  items.sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
 
-  try {
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Feed ${res.status}`);
-    const json = await res.json();
-    const items = parseFeed(json.items ?? json);
-    if (!items.length) return { items: [...officialSources], live: false };
-    items.sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
-    return { items, live: true };
-  } catch (err) {
+  if (!items.length) {
     return {
       items: [...officialSources],
       live: false,
-      error: err instanceof Error ? err.message : "Feed unavailable",
+      error: errors[0],
     };
   }
+
+  const present = new Set(items.map((item) => item.source));
+  officialSources.forEach((portal) => {
+    if (!present.has(portal.source)) items.push(portal);
+  });
+  items.sort((a, b) => (b.publishedAt || "").localeCompare(a.publishedAt || ""));
+
+  return { items, live: true, error: errors[0] };
 }
 
 export function isRecent(iso: string, days = 14) {

@@ -32,8 +32,8 @@ export default function UpdatesPage() {
             Latest tax and compliance updates
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted">
-            A single place to open CBIC (GST), Income Tax Department, and MCA notifications. Dates
-            and summaries on a live feed must still be checked on the official page.
+            GST, ITR, and MCA notifications collected automatically from official government
+            websites. Dates and summaries must still be checked on the original notification.
           </p>
         </div>
       </section>

@@ -15,7 +15,7 @@ export function ConsultationCta() {
           is reviewed. No outcome is implied by accepting a meeting.
         </p>
         <div className="mt-10 flex justify-center">
-          <LuxuryButton href="/contact#enquiry" variant="gold">
+          <LuxuryButton href="/consultation" variant="gold">
             Schedule a Meeting
           </LuxuryButton>
         </div>

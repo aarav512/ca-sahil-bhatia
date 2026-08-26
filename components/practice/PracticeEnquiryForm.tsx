@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { LuxuryButton } from "@/components/LuxuryButton";
 import { cn } from "@/lib/utils";
+import { practiceAreas } from "@/lib/site";
 import {
   enquiryAccept,
   isAllowedEnquiryFile,
@@ -67,13 +68,14 @@ function Field({
   );
 }
 
-type Errors = Partial<Record<"fullName" | "mobile" | "email" | "message" | "files", string>>;
+type Errors = Partial<Record<"fullName" | "mobile" | "email" | "message" | "files" | "serviceName", string>>;
 
-export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
+export function PracticeEnquiryForm({ serviceName }: { serviceName?: string }) {
   const [errors, setErrors] = useState<Errors>({});
   const [files, setFiles] = useState<File[]>([]);
   const [status, setStatus] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const lockedService = Boolean(serviceName);
 
   function onFiles(list: FileList | null) {
     if (!list) return;
@@ -99,11 +101,13 @@ export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
     const mobile = String(data.get("mobile") || "").trim();
     const email = String(data.get("email") || "").trim();
     const city = String(data.get("city") || "").trim();
+    const selectedService = String(data.get("serviceName") || serviceName || "").trim();
     const message = String(data.get("message") || "").trim();
     const next: Errors = {};
     if (fullName.length < 2) next.fullName = "Please enter your full name.";
     if (!/^[0-9+\s-]{8,15}$/.test(mobile)) next.mobile = "Please enter a valid mobile number.";
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Please enter a valid email address.";
+    if (!selectedService) next.serviceName = "Please select the service required.";
     if (message.length < 12) next.message = "Please describe the matter in a few sentences.";
     setErrors(next);
     if (Object.keys(next).length) return;
@@ -115,7 +119,7 @@ export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
         mobile,
         email,
         city,
-        serviceName,
+        serviceName: selectedService,
         message,
         files,
       });
@@ -138,26 +142,55 @@ export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
     );
   }
 
-  const prefix = serviceName.replace(/\s+/g, "-").toLowerCase();
+  const prefix = (serviceName || "consultation").replace(/\s+/g, "-").toLowerCase();
 
   return (
     <form onSubmit={onSubmit} className="border border-champagne/30 bg-pearl/60 p-8 md:p-10" noValidate>
       <h3 className="font-serif text-2xl text-navy">Request professional assistance</h3>
       <p className="mt-2 text-sm text-muted">
-        Attach GST invoices, returns, property papers, or other supporting files if useful. This does
-        not create an engagement until a letter is issued.
+        Attach GST invoices, returns, property papers, agreements, financial statements, or other
+        supporting files. This does not create an engagement until a letter is issued.
       </p>
       <Field id={`${prefix}-name`} name="fullName" label="Full name" required error={errors.fullName} />
       <Field id={`${prefix}-mobile`} name="mobile" label="Mobile number" type="tel" required error={errors.mobile} />
       <Field id={`${prefix}-email`} name="email" label="Email address" type="email" required error={errors.email} />
       <Field id={`${prefix}-city`} name="city" label="City (optional)" />
-      <Field
-        id={`${prefix}-service`}
-        name="serviceName"
-        label="Service"
-        defaultValue={serviceName}
-        readOnly
-      />
+      {lockedService ? (
+        <Field
+          id={`${prefix}-service`}
+          name="serviceName"
+          label="Service required"
+          defaultValue={serviceName}
+          readOnly
+        />
+      ) : (
+        <div className="relative pt-5">
+          <select
+            id={`${prefix}-service`}
+            name="serviceName"
+            required
+            defaultValue=""
+            aria-invalid={!!errors.serviceName}
+            className="peer w-full border-0 border-b border-border bg-transparent px-0 pb-3 pt-2 text-base text-ink outline-none transition-colors duration-300 focus:border-gold"
+          >
+            <option value="" disabled>
+              Select a service
+            </option>
+            {practiceAreas.map((area) => (
+              <option key={area.slug} value={area.title}>
+                {area.title}
+              </option>
+            ))}
+          </select>
+          <label
+            htmlFor={`${prefix}-service`}
+            className="pointer-events-none absolute left-0 top-0 text-[11px] uppercase tracking-luxury text-champagne"
+          >
+            Service required
+          </label>
+          {errors.serviceName ? <p className="mt-2 text-sm text-walnut">{errors.serviceName}</p> : null}
+        </div>
+      )}
       <Field
         id={`${prefix}-message`}
         name="message"
@@ -168,7 +201,7 @@ export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
       />
       <div className="pt-8">
         <label htmlFor={`${prefix}-files`} className="text-[11px] uppercase tracking-luxury text-champagne">
-          Supporting documents
+          Upload documents
         </label>
         <input
           id={`${prefix}-files`}
@@ -179,6 +212,7 @@ export function PracticeEnquiryForm({ serviceName }: { serviceName: string }) {
           className="mt-3 block w-full text-sm text-ink file:mr-4 file:border file:border-champagne/50 file:bg-ivory file:px-4 file:py-2 file:text-[11px] file:uppercase file:tracking-luxury"
           onChange={(e) => onFiles(e.target.files)}
         />
+        <p className="mt-2 text-xs text-muted">PDF, JPG, PNG, DOC, or DOCX. Multiple files allowed.</p>
         {files.length ? (
           <ul className="mt-3 list-disc pl-5 text-sm text-muted">
             {files.map((f) => (

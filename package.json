@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "node scripts/fetch-gov-updates.mjs && next build",
+    "fetch:updates": "node scripts/fetch-gov-updates.mjs",
     "start": "next start",
     "lint": "next lint"
   },

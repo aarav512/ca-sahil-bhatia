@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { LuxuryButton } from "@/components/LuxuryButton";
 import { GoldDivider } from "@/components/GoldDivider";
 import { FaqList } from "@/components/FaqList";
-import { PracticeEnquiryForm } from "@/components/practice/PracticeEnquiryForm";
 import { PracticeJumpNav } from "@/components/PracticeJumpNav";
 import { practiceAreas, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
@@ -110,12 +109,12 @@ export default function PracticeAreasPage() {
                 <FaqList items={[...area.faqs]} />
               </div>
 
-              <div className="mt-10">
-                <PracticeEnquiryForm serviceName={area.title} />
-              </div>
-              <div className="mt-6">
-                <LuxuryButton href="/contact#enquiry" variant="outline">
-                  Request Professional Assistance
+              <div className="mt-10 flex flex-wrap gap-3">
+                <LuxuryButton href={`/consultation?service=${area.slug}`} variant="gold">
+                  Get Consultation
+                </LuxuryButton>
+                <LuxuryButton href={`/consultation?service=${area.slug}`} variant="outline">
+                  Submit Your Case
                 </LuxuryButton>
               </div>
             </article>

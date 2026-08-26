@@ -51,8 +51,8 @@ export function UpdatesFeed({ compact = false }: { compact?: boolean }) {
         <>
           <p className="mb-8 text-sm text-muted">
             {live
-              ? "This list is refreshed from the configured feed. Confirm the text on the official page before relying on it."
-              : "Until a live JSON feed is connected, these cards open the official CBIC, Income Tax, and MCA portals. They are not invented notifications."}
+              ? "Notifications are collected automatically from the official CBIC, Income Tax, and MCA websites. Confirm each item on the government page before relying on it."
+              : "Until the next successful collection from official websites, these cards open the CBIC, Income Tax, and MCA portals. They are not invented notifications."}
           </p>
           {error ? <p className="mb-6 text-sm text-walnut">{error}</p> : null}
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
@@ -117,7 +117,7 @@ export function UpdatesFeed({ compact = false }: { compact?: boolean }) {
                 rel="noopener noreferrer"
                 className="mt-6 inline-block text-[11px] uppercase tracking-luxury text-champagne"
               >
-                Read more
+                Read Official Notification
               </a>
             </article>
           ))}
