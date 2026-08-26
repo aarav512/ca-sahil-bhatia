@@ -10,6 +10,7 @@ import { LuxuryButton } from "./LuxuryButton";
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const path = pathname.replace(/\/$/, "") || "/";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -41,14 +42,14 @@ export function SiteHeader() {
             {site.qualification}
           </span>
         </Link>
-        <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 xl:gap-8 lg:flex" aria-label="Primary">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
                 "group relative font-body text-[11px] font-medium uppercase tracking-wideish text-walnut transition-colors hover:text-navy",
-                pathname === item.href && "text-navy",
+                path === item.href && "text-navy",
               )}
             >
               {item.label}

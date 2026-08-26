@@ -25,6 +25,14 @@ Edit `lib/site.ts` only with verified data:
 
 Until those fields are filled, the site omits them rather than inventing them.
 
+## Document library, enquiries, and tax updates
+
+Copy `.env.example` to `.env.local` on Cloudflare (Pages environment variables) and locally.
+
+- **Documents** (`/documents`): set `NEXT_PUBLIC_GOOGLE_DRIVE_FOLDER_ID` and `NEXT_PUBLIC_GOOGLE_DRIVE_API_KEY`. Share the folder as view-with-link. Files in that folder appear automatically.
+- **Practice-area enquiry files**: set `NEXT_PUBLIC_ENQUIRY_WEBHOOK_URL` to a Google Apps Script or function that writes fields and attachments into Drive. Static hosting cannot keep a service-account secret.
+- **Updates** (`/updates`): set `NEXT_PUBLIC_UPDATES_JSON_URL` to a JSON feed of notifications. Until then, cards open the official CBIC, Income Tax, and MCA sites.
+
 ## Stack
 
 Next.js 15, TypeScript, Tailwind CSS, GSAP, Lenis, Framer Motion, React Three Fiber, Drei.

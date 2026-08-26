@@ -6,9 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatDate(iso: string) {
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) return iso;
   return new Intl.DateTimeFormat("en-IN", {
     day: "numeric",
     month: "long",
     year: "numeric",
-  }).format(new Date(iso));
+  }).format(new Date(t));
 }

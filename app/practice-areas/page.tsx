@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { LuxuryButton } from "@/components/LuxuryButton";
 import { GoldDivider } from "@/components/GoldDivider";
 import { FaqList } from "@/components/FaqList";
-import { PracticeJumpNav } from "@/components/PracticeJumpNav";
+import { PracticeEnquiryForm } from "@/components/practice/PracticeEnquiryForm";
 import { practiceAreas, site } from "@/lib/site";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
@@ -110,6 +110,9 @@ export default function PracticeAreasPage() {
               </div>
 
               <div className="mt-10">
+                <PracticeEnquiryForm serviceName={area.title} />
+              </div>
+              <div className="mt-6">
                 <LuxuryButton href="/contact#enquiry" variant="outline">
                   Request Professional Assistance
                 </LuxuryButton>
