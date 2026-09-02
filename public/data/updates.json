@@ -1,12 +1,155 @@
 {
-  "generatedAt": "2026-09-02T10:24:57.823Z",
+  "generatedAt": "2026-09-02T15:48:44.101Z",
   "errors": [
-    "fetch failed",
     "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/notifications.html 403",
     "https://www.mca.gov.in/content/mca/global/en/acts-rules/ebooks/circulars.html 403",
     "https://www.mca.gov.in/content/mca/global/en/home.html 403"
   ],
   "items": [
+    {
+      "id": "CBIC-0",
+      "title": "Reviewing authority, Revisional Authority and Appellate Authority in respect of orders passed by Common Adjudicating Authority (CAA) for show cause notices issued by DGGI -reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Reviewing authority, Revisional Authority and Appellate Authority in respect of orders passed by Common Adjudicating Authority (CAA) for show cause notices issued by DGGI -reg.",
+      "url": "https://cbic-gst.gov.in/pdf/Circular-No-250-2025.pdf"
+    },
+    {
+      "id": "CBIC-1",
+      "title": "Generation and quoting of Document Identification Number(DIN) on any communication issued by the officers of the Central Board of Indirect Taxes and Customs (CBIC) to tax payers and other concerned persons - reg.s",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Generation and quoting of Document Identification Number(DIN) on any communication issued by the officers of the Central Board of Indirect Taxes and Customs (CBIC) to tax payers and other concerned persons - reg.s",
+      "url": "https://cbic-gst.gov.in/pdf/Circular-No-249-2025.pdf"
+    },
+    {
+      "id": "CBIC-2",
+      "title": "Instructions for processing of applications for GST registration - regarding.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Instructions for processing of applications for GST registration - regarding.",
+      "url": "https://cbic-gst.gov.in/pdf/ins-gst-no-03-2025.pdf"
+    },
+    {
+      "id": "CBIC-3",
+      "title": "Seeks to notify Central Goods and Services Tax (Second Amendment) Rules 2025",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Seeks to notify Central Goods and Services Tax (Second Amendment) Rules 2025",
+      "url": "https://cbic-gst.gov.in/pdf/gst-ct-11-2025.pdf"
+    },
+    {
+      "id": "CBIC-4",
+      "title": "Clarification on applicability of late fee for delay in furnishing of FORM GSTR-9C- reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Clarification on applicability of late fee for delay in furnishing of FORM GSTR-9C- reg.",
+      "url": "https://cbic-gst.gov.in/pdf/cir-cgst-246-03-2025.pdf"
+    },
+    {
+      "id": "CBIC-5",
+      "title": "Procedure to be followed in department appeal filed against interest and/or penalty only, related to Section 128A of the CGST Act, 2017 -regarding.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Procedure to be followed in department appeal filed against interest and/or penalty only, related to Section 128A of the CGST Act, 2017 -regarding.",
+      "url": "https://cbic-gst.gov.in/pdf/ins-gst-02-2025.pdf"
+    },
+    {
+      "id": "CBIC-6",
+      "title": "Clarification regarding GST rates & classification (goods) based on the recommendations of the GST Council in its 55th meeting held on 21st December, 2024, at Jaisalmer -reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Clarification regarding GST rates & classification (goods) based on the recommendations of the GST Council in its 55th meeting held on 21st December, 2024, at Jaisalmer -reg.",
+      "url": "https://cbic-gst.gov.in/pdf/GST-Circular.pdf"
+    },
+    {
+      "id": "CBIC-7",
+      "title": "Clarifications regarding applicability of GST on certain services – reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Clarifications regarding applicability of GST on certain services – reg.",
+      "url": "https://cbic-gst.gov.in/pdf/Circular-55thGSTC-Services.pdf"
+    },
+    {
+      "id": "CBIC-8",
+      "title": "Regularizing payment of GST on co-insurance premium apportioned by the lead insurer to the co-insurer and on ceding /re-insurance commission deducted from the reinsurance premium paid by the insurer to the reinsurer – reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Regularizing payment of GST on co-insurance premium apportioned by the lead insurer to the co-insurer and on ceding /re-insurance commission deducted from the reinsurance premium paid by the insurer to the reinsurer – reg.",
+      "url": "https://cbic-gst.gov.in/pdf/Circular-Services-Co-insurance-Re-insurance.pdf"
+    },
+    {
+      "id": "CBIC-9",
+      "title": "Seeks to appoint common adjudicating authority for Show cause notices issued by officers of DGGI.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Seeks to appoint common adjudicating authority for Show cause notices issued by officers of DGGI.",
+      "url": "https://cbic-gst.gov.in/pdf/NN-31-2024-Eng.pdf"
+    },
+    {
+      "id": "CBIC-10",
+      "title": "Seeks to extend the due date for furnishing FORM GSTR-3B for the month of October, 2024 for registered persons whose principal place of business is in the district of Murshidabad in the state of West Bengal.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Seeks to extend the due date for furnishing FORM GSTR-3B for the month of October, 2024 for registered persons whose principal place of business is in the district of Murshidabad in the state of West Bengal.",
+      "url": "https://cbic-gst.gov.in/pdf/NN-30-2024-Eng.pdf"
+    },
+    {
+      "id": "CBIC-12",
+      "title": "Seeks to extend the due date for furnishing FORM GSTR-3B for the month of October, 2024 for registered persons whose principal place of business is in the State of Manipur.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Seeks to extend the due date for furnishing FORM GSTR-3B for the month of October, 2024 for registered persons whose principal place of business is in the State of Manipur.",
+      "url": "https://cbic-gst.gov.in/pdf/NN-29-Eng.pdf"
+    },
+    {
+      "id": "CBIC-13",
+      "title": "Extension of due date for filing of return in FORM GSTR-3B for the month of October, 2024 for the persons registered in the state of Maharashtra and Jharkhand.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Extension of due date for filing of return in FORM GSTR-3B for the month of October, 2024 for the persons registered in the state of Maharashtra and Jharkhand.",
+      "url": "https://cbic-gst.gov.in/pdf/NN-26-2024_Eng.pdf"
+    },
+    {
+      "id": "CBIC-14",
+      "title": "Corrigendum to Circular No. 237/31/2024-GST dated 15th October, 2024 issued vide F. No. CBIC-20001/6/2024-GST-reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "Corrigendum to Circular No. 237/31/2024-GST dated 15th October, 2024 issued vide F. No. CBIC-20001/6/2024-GST-reg.",
+      "url": "https://cbic-gst.gov.in/pdf/corrigendum-Circular-237-31-2024-GST.pdf"
+    },
+    {
+      "id": "CBIC-15",
+      "title": "KIND ATTENTION: CENTRAL EXCISE TAXPAYERS: Request for Suggestions from Industry & Trade Associations for Budget 2024-25 regarding changes in direct and indirect taxes.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2026-07-09",
+      "summary": "KIND ATTENTION: CENTRAL EXCISE TAXPAYERS: Request for Suggestions from Industry & Trade Associations for Budget 2024-25 regarding changes in direct and indirect taxes.",
+      "url": "https://cbic-gst.gov.in/pdf/letter-trade-associations-webmaster.pdf"
+    },
+    {
+      "id": "CBIC-11",
+      "title": "Amendment to Circular No. 31/05/2018-GST, dated 9th February, 2018 on 'Proper officer under sections 73 and 74 of the Central Goods and Services Tax Act, 2017 and under the Integrated Goods and Services Tax Act, 2017'–reg.",
+      "source": "CBIC",
+      "category": "GST",
+      "publishedAt": "2018-05-31",
+      "summary": "Amendment to Circular No. 31/05/2018-GST, dated 9th February, 2018 on 'Proper officer under sections 73 and 74 of the Central Goods and Services Tax Act, 2017 and under the Integrated Goods and Services Tax Act, 2017'–reg.",
+      "url": "https://cbic-gst.gov.in/pdf/circular-239-33-2024-GST.pdf"
+    },
     {
       "id": "it-portal",
       "title": "Income Tax Department — notifications, ITR utilities, and press releases",
